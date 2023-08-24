@@ -42,6 +42,5 @@ Edits should be done only in the “dev” folder, where all project specific CS
 
 This repository is the digital side of the “Salon of Open Secrets” project, an open source webpage developed by “not bz studio” - [not bz](http://not-bz.com/) 
 
-Website can be viewed here - [Salon of Open Secrets](http://salonofopensecrets.at/) 
-Visit for more information about the projects and the persons involved.
+Website can be viewed here - [Salon of Open Secrets](http://salonofopensecrets.at/) - visit for more information about the projects and the persons involved.
 
