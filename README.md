@@ -17,7 +17,7 @@ npm install
 3) Run Gulp
 ```
 gulp
-
+```
 
 # Functionality
 
@@ -30,7 +30,7 @@ Additionally, there is a php file used to for analytics. When a visitor reaches 
 
 # Usage
 
-This platform was built with Gulp - gulpjs.com
+This platform was built with [Gulp](http://gulpjs.com/)
 It’s a toolkit used to compile SCSS files and to automate the process of templating the html with json files filled with data.
 
 In order to set it up on your local machine, simply download or clone the repository. Gulp and the necessary libraries need to be installed - for this use the command line at the location of the gulp file. Finally, execute gulp and the website will run locally.
@@ -40,8 +40,8 @@ Edits should be done only in the “dev” folder, where all project specific CS
 
 # Information
 
-This repository is the digital side of the “Salon of Open Secrets” project, an open source webpage developed by “not bz studio” - not-bz.com 
+This repository is the digital side of the “Salon of Open Secrets” project, an open source webpage developed by “not bz studio” - [not bz](http://not-bz.com/) 
 
-Website can be viewed here - salonofopensecrets.at
+Website can be viewed here - [Salon of Open Secrets](http://salonofopensecrets.at/) 
 Visit for more information about the projects and the persons involved.
 
