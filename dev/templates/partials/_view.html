@@ -1,0 +1,42 @@
+{% for view in views %}
+
+
+<section data-view="{{view.index}}" data-type="video" {% if view.character %}data-character={{view.character}}{% endif %} class="">
+    
+    <div class="video-div controls inline-flex border">
+        <!--<i class="back fa-sharp fa-solid fa-arrow-left"></i>-->
+        {% if view.video %} 
+        <i data-view="{{view.index}}" class="video-controls backward fa-sharp fa-solid fa-arrow-left"></i>
+        <i data-view="{{view.index}}" class="video-controls restart fa-sharp fa-solid fa-rotate-left"></i>
+        <i data-view="{{view.index}}" class="video-controls play fa-sharp fa-solid fa-pause"></i>
+        <i data-view="{{view.index}}" class="video-controls forward fa-sharp fa-solid fa-arrow-right"></i>
+        {% endif %}
+    </div>
+
+    {% if view.video %}
+    <div class="video-div video-container" data-auto="{{view.auto}}" {% if view.auto %} data-autoforward="{{ view.autoforward }}"{% endif %}>
+        <video preload="auto" playsinline data-poster="img/poster.webp" id="video-{{view.index}}" data-view="{{view.index}}" class="video border" src="vid/{{view.video}}"></video>
+    </div>
+    {% endif %}
+    
+    <div class="question-container hide">
+        {% if view.image %}
+        <img class="border" src="img/{{ view.image }}" alt="{{ view.image }}">
+        {% endif %}        
+        
+        {% if view.text %}
+        <p class="border"> {{ view.text }}</p>
+        {% endif %}
+        
+        {% if view.buttons %}
+        <div class="inline-flex ">
+            {% for button in view.buttons %}
+            <button class="border" data-view="{{button.forward}}"> {{ button.text }}</button>
+            {% endfor  %}
+        </div>
+        {% endif %}
+        
+    </div>
+</section>
+
+{% endfor %}

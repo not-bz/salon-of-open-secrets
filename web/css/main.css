@@ -1,0 +1,452 @@
+/***
+   * developed by Beatriz Lacerda
+   * not-bz.com
+   ***
+ ***/
+/* Variables -----------------------------------------*/
+/* Fonts ---------------------------------------------*/
+@font-face {
+  font-family: "Ortica";
+  src: url("fonts/Ortica/OrticaLinear-Regular.woff") format("woff"), url("fonts/Ortica/OrticaLinear-Regular.woff2") format("woff2");
+  font-weight: normal;
+}
+@font-face {
+  font-family: "Ortica";
+  src: url("fonts/Ortica/OrticaLinear-Light.woff") format("woff"), url("fonts/Ortica/OrticaLinear-Light.woff2") format("woff2");
+  font-weight: light;
+}
+@font-face {
+  font-family: "Ortica";
+  src: url("fonts/Ortica/OrticaLinear-Bold.woff") format("woff"), url("fonts/Ortica/OrticaLinear-Bold.woff2") format("woff2");
+  font-weight: bold;
+}
+/* General -------------------------------------------*/
+* {
+  box-sizing: border-box;
+  font-family: "Ortica";
+  margin: 0;
+}
+
+html, body {
+  width: 100%;
+  height: 100%;
+  color: red;
+}
+
+body {
+  background: #fff0f0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: stretch;
+}
+
+header, footer {
+  display: flex;
+  justify-content: space-between;
+  margin: 24px 32px;
+}
+
+header {
+  align-items: center;
+}
+
+section {
+  margin: 0px 32px;
+  flex: 1;
+  display: none;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  gap: 16px;
+}
+@supports (-webkit-touch-callout: none) {
+  section > * {
+    margin-top: 16px;
+  }
+  section > *:nth-child(1) {
+    margin-top: 0px;
+  }
+}
+section.active {
+  display: flex;
+}
+section p {
+  max-width: 750px;
+}
+section p.border {
+  padding: 16px 24px;
+  border-radius: 30px;
+}
+
+footer {
+  padding-bottom: 24px;
+  margin-bottom: 0px;
+  align-items: flex-end;
+}
+footer p, footer a {
+  font-size: 0.75rem;
+  line-height: 1.2rem;
+}
+footer #logo-wrapper img {
+  width: auto;
+  height: 25px;
+}
+footer #logo-wrapper img:nth-child(1) {
+  height: 14px;
+}
+
+a {
+  color: red;
+}
+a:hover {
+  color: rgb(244, 184, 197);
+  font-style: italic;
+  font-weight: bold;
+}
+a:focus {
+  color: red;
+}
+
+p, button {
+  font-size: 1.2rem;
+  line-height: 1.8rem;
+}
+
+h1 {
+  font-size: 2rem;
+  line-height: 3rem;
+}
+
+button {
+  background: red;
+  color: rgb(244, 184, 197);
+}
+button.border {
+  padding: 12px 32px;
+}
+button:hover {
+  cursor: pointer;
+  background: rgb(244, 184, 197);
+  color: red;
+  font-style: italic;
+  font-weight: bold;
+}
+
+i {
+  font-size: 1.5rem;
+  color: rgb(244, 184, 197);
+}
+i.video-controls {
+  width: 25px;
+}
+i::before {
+  content: "";
+  display: inline-block;
+  background: none;
+  padding: 8px 8px;
+  border-radius: 50%;
+}
+i.fa-play::before {
+  padding: 8px 9px 8px 12px;
+}
+i.fa-pause::before {
+  padding: 8px 12px;
+}
+i.fa-arrow-right::before {
+  padding: 8px 10px;
+}
+i.fa-xmark::before {
+  padding: 8px 12px;
+}
+i:hover {
+  cursor: pointer;
+}
+i:hover::before {
+  background: rgb(244, 184, 197);
+  color: red;
+}
+
+i.reverse {
+  color: red;
+}
+i.reverse::before {
+  background: rgb(244, 184, 197);
+}
+i.reverse:hover::before {
+  background: red;
+  color: rgb(244, 184, 197);
+}
+
+#loader .loading__dot {
+  animation: dot ease-in-out 1s infinite;
+  background-color: grey;
+  display: inline-block;
+  border-radius: 50%;
+  height: 5px;
+  margin: 0px 0px;
+  width: 5px;
+}
+#loader .loading__dot:nth-of-type(2) {
+  animation-delay: 0.2s;
+}
+#loader .loading__dot:nth-of-type(3) {
+  animation-delay: 0.3s;
+}
+@keyframes dot {
+  0% {
+    background-color: grey;
+    transform: scale(0.5);
+  }
+  50% {
+    background-color: red;
+    transform: scale(1);
+  }
+  100% {
+    background-color: grey;
+    transform: scale(0.5);
+  }
+}
+#loader img {
+  animation: spin 2s infinite;
+  filter: invert(30%) sepia(100%) hue-rotate(-40deg) saturate(6);
+}
+
+@keyframes spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+.video-container {
+  width: 100%;
+  height: 100%;
+  max-width: 100%;
+  max-height: 65vh;
+  position: relative;
+  border-radius: 3rem;
+}
+.video-container video {
+  position: absolute;
+  top: 0;
+  left: 50%;
+  border-radius: 3rem;
+  max-width: 100%;
+  max-height: 65vh;
+  transform: translateX(-50%);
+}
+.video-container video.border {
+  padding: 0px;
+}
+
+.video-controls:nth-child(3) {
+  margin-right: 4px;
+}
+
+.question-container {
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+  width: 100%;
+  align-content: space-between;
+  align-items: center;
+  max-width: 750px;
+}
+@supports (-webkit-touch-callout: none) {
+  .question-container > * {
+    margin-top: 16px;
+  }
+  .question-container > *:nth-child(1) {
+    margin-top: 0px;
+  }
+}
+.question-container .inline-flex {
+  flex-direction: column;
+}
+@supports (-webkit-touch-callout: none) {
+  .question-container .inline-flex > * {
+    margin-top: 16px;
+    margin-left: 0px;
+  }
+  .question-container .inline-flex > *:nth-child(1) {
+    margin-top: 0px;
+    margin-left: 0px;
+  }
+}
+.question-container img {
+  height: 50vh;
+  width: auto;
+}
+
+img {
+  width: auto;
+  max-width: 100%;
+  max-height: 25vh;
+}
+img.border {
+  padding: 0px;
+}
+
+.border {
+  border: 1px solid rgb(244, 184, 197);
+  border-radius: 3rem;
+  padding: 8px 24px;
+}
+.border.square {
+  border-radius: 0px;
+}
+
+.highlight {
+  background: rgba(240, 175, 189, 0.27);
+}
+
+.inline-flex {
+  display: flex;
+  gap: 16px;
+  align-items: flex-start;
+}
+@supports (-webkit-touch-callout: none) {
+  .inline-flex > * {
+    margin-left: 16px;
+  }
+  .inline-flex > *:nth-child(1) {
+    margin-left: 0px;
+  }
+}
+.inline-flex.wrap {
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.vertical-align {
+  justify-content: center;
+}
+
+.hide {
+  display: none;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.small, p.small, a.small {
+  font-size: 0.75rem;
+  line-height: 1.2rem;
+}
+
+/* Modal -------------------------------------------*/
+.blocker {
+  background-color: rgba(250, 61, 61, 0.49);
+  padding: 0px;
+}
+.blocker::before {
+  display: none !important;
+}
+.blocker .modal {
+  display: block;
+  max-width: none;
+  width: auto;
+  margin: 24px 32px;
+  border-radius: 2rem;
+  padding: 24px 32px;
+  box-shadow: 0 0 10px #fe5959;
+  background: rgba(255, 255, 255, 0.89);
+}
+.blocker .modal a.close-modal {
+  display: none;
+}
+.blocker .modal a[data-close] {
+  position: fixed;
+  top: 14.5px;
+  right: 30px;
+  width: 40px;
+  height: 40px;
+  background: none;
+}
+
+/* Video Override -------------------------------------------*/
+*::-webkit-media-controls-panel {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+*::-webkit-media-controls-play-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+*::-webkit-media-controls-start-playback-button {
+  display: none !important;
+  -webkit-appearance: none;
+}
+
+video::-webkit-media-controls {
+  display: none !important;
+}
+
+@media only screen and (max-width: 725px) {
+  header, footer, .blocker .modal {
+    margin: 16px;
+  }
+  footer {
+    margin-bottom: 0px;
+  }
+  header #ExitButton {
+    font-size: 1.2rem;
+  }
+  footer #copyrights-wrapper.inline-flex {
+    display: grid;
+    gap: 8px 16px;
+    grid-template-columns: 50% 40%;
+    flex: 0.9;
+  }
+  footer #copyrights-wrapper.inline-flex > * {
+    margin-left: 0px;
+  }
+  footer #copyrights-wrapper.inline-flex > *:nth-child(1) {
+    margin-left: 0px;
+  }
+  footer #logo-wrapper img {
+    height: 20px;
+  }
+  footer #logo-wrapper img:nth-child(1) {
+    height: 12px;
+  }
+  footer p, footer a {
+    font-size: 0.6rem;
+    line-height: 0.75rem;
+  }
+  section {
+    margin: 0px 16px;
+  }
+  p, button {
+    font-size: 1rem;
+    line-height: 1.5rem;
+  }
+  h1 {
+    font-size: 1.3rem;
+    line-height: 2.3rem;
+  }
+  i {
+    font-size: 1.2em;
+  }
+  .video-container, .video-container video {
+    height: auto;
+    max-height: none;
+    width: 100%;
+  }
+  .border {
+    padding: 8px 16px;
+  }
+  .blocker .modal {
+    padding: 24px;
+  }
+  .blocker .modal a[data-close] {
+    right: 10px;
+  }
+}

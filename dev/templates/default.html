@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  
+  <title>Salon of Open Secrets</title>
+  <meta name="description" content="Salon of Open Secrets">
+  <meta name="keywords" content="HTML, CSS, JavaScript">
+  <link rel="icon" type="image/x-icon" href="./img/icon-1.png">
+  
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amarante&display=swap" rel="stylesheet">
+  
+  <link rel="stylesheet" href="./css/fa.min.css">
+  <link rel="stylesheet" href="./css/jquery.modal.min.css">
+  <link rel="stylesheet" href="./css/main.min.css">
+  
+</head>
+
+<body>
+  <!-- Header -->
+  <header class="border">
+    <h1>Salon of Open Secrets</h1>
+    <i id="ExitButton" class="fa-sharp fa-solid fa-xmark hide"></i>
+  </header>
+
+
+  <!-- Loading View -->
+  <section id="loader" class="vertical-align active">
+    <img src="/img/icon-1.png" alt="loading">
+    <p class="bold"> Loading   <span class="loading__dot"></span>
+  <span class="loading__dot"></span>
+  <span class="loading__dot"></span>
+</p>
+  </section>
+
+  <!-- Starting View -->
+  <section data-view="0" data-type="text" class="">
+    <p class="border"> Willkommen im Salon of Open Secrets
+    </p>
+    <p class="border"> Du kannst bei diesem Citizen Science Projekt 
+      über verschiedene Workshops teilnehmen, den so genannten "Salons". Worum es dabei geht erfährst du in dieser Geschichte.      
+    </p>
+    <button class="border" data-view="1"> Start </button>
+    <br>
+  </section>
+  
+  <!-- Final View -->
+  {% include "_end.html" %}
+
+  <!-- All Views -->
+  {% include "_view.html" %}
+
+  <!-- Impressum -->
+  {% include "_impressum.html" %}
+
+  <!-- Footer -->
+  <footer>
+    <div id="copyrights-wrapper" class="inline-flex">
+      <p>Copyrights 2023 </p>
+      <a href="#impressum" data-modal>Impressum</a>
+      <a href="https://forum.openhardware.science/g/Open-Secrets-Salon" target="_blank">Wiki</a>
+      <a href="https://newsletter.mzbaltazarslaboratory.org/subscription/r1y_hzD8n?fbclid=IwAR38ceQR8ksrcrpRCObFfDaK6iqNpxSGiWNabhK2V9ATTixfLyVzAvItrQs" target="_blank">Newsletter</a>
+    </div>
+
+    <div id="logo-wrapper" class="inline-flex">
+      <img src="img/fwf_logo.png">
+      <img src="img/akademie_logo.svg">
+    </div>
+  </footer>
+  
+  <script src="js/jquery-3.3.1.min.js"></script>
+  <script src="js/jquery.modal.min.js"></script>
+  <script src="js/script.min.js"></script>
+  
+</body>
+</html>

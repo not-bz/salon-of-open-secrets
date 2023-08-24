@@ -1,0 +1,433 @@
+/* Variables -----------------------------------------*/
+
+$primary: red;
+$primary-light: rgb(244, 184, 197);
+$highlight: rgba(240, 175, 189, 0.27);
+$background: #fff0f0;
+$black: #202020;
+$border-radius: 3rem;
+
+
+/* Fonts ---------------------------------------------*/
+
+@font-face {
+    font-family: "Ortica";
+    src: url("fonts/Ortica/OrticaLinear-Regular.woff") format('woff'),
+    url("fonts/Ortica/OrticaLinear-Regular.woff2") format('woff2');
+    font-weight: normal;
+}
+
+@font-face {
+    font-family: "Ortica";
+    src: url("fonts/Ortica/OrticaLinear-Light.woff") format('woff'),
+    url("fonts/Ortica/OrticaLinear-Light.woff2") format('woff2');
+    font-weight: light;
+}
+
+@font-face {
+    font-family: "Ortica";
+    src: url("fonts/Ortica/OrticaLinear-Bold.woff") format('woff'),
+    url("fonts/Ortica/OrticaLinear-Bold.woff2") format('woff2');
+    font-weight: bold;
+}
+
+/* General -------------------------------------------*/
+
+* {
+    box-sizing: border-box;
+    font-family: "Ortica";
+    margin: 0;
+}
+
+html, body {
+    width: 100%;
+    height: 100%;
+    color: $primary;
+}
+
+body {
+    background: $background;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: stretch;
+}
+
+header, footer {
+    display: flex;
+    justify-content: space-between;
+    margin: 24px 32px;
+}
+
+header {
+    align-items: center;
+}
+
+section {
+    margin: 0px 32px;
+    flex: 1;
+    display: none;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    gap: 16px;
+    
+    @supports (-webkit-touch-callout: none) {
+        &>* {
+            margin-top: 16px;
+        }
+        &>*:nth-child(1) {
+            margin-top: 0px;
+        }    
+    }
+    
+    &.active {
+        display: flex;
+    }
+    
+    p {
+        max-width: 750px;
+        
+        &.border {
+            padding: 16px 24px;
+            border-radius: 30px;
+        }
+    }
+}
+
+footer {
+    padding-bottom: 24px;
+    margin-bottom: 0px;
+    align-items: flex-end;
+    
+    p, a {
+        font-size: .75rem;
+        line-height: 1.2rem;
+    }
+    
+    #logo-wrapper {
+        
+        img {
+            width: auto;
+            height: 25px;
+        
+            &:nth-child(1) {
+                height: 14px;
+            }
+        }
+
+
+        
+    }
+}
+
+a {
+    color: $primary;
+    
+    &:hover {
+        color: $primary-light;
+        font-style: italic;
+        font-weight: bold;
+    }
+    
+    &:focus {
+        color: $primary;
+    }
+}
+
+p, button {
+    font-size: 1.2rem;
+    line-height: 1.8rem;
+}
+
+h1 {
+    font-size: 2rem;
+    line-height: 3rem;
+}
+
+button {
+    background: $primary;
+    color: $primary-light;
+    
+    &.border {
+        padding: 12px 32px;
+    }
+    
+    &:hover {
+        cursor: pointer;
+        background: $primary-light;
+        color: $primary;
+        font-style: italic;
+        font-weight: bold;
+    }
+}
+
+i {
+    font-size: 1.5rem;
+    color: $primary-light;
+    
+    &.video-controls {
+        width: 25px;
+    }
+    
+    &::before {
+        content: '';
+        display: inline-block;
+        background: none;
+        padding: 8px 8px;
+        border-radius: 50%;
+    }
+    
+    &.fa-play::before {
+        padding: 8px 9px 8px 12px;
+    }    
+    &.fa-pause::before {
+        padding: 8px 12px;
+    }    
+    &.fa-arrow-right::before {
+        padding: 8px 10px;
+    }        
+    &.fa-xmark::before {
+        padding: 8px 12px;
+    }    
+    
+    
+    &:hover {
+        cursor: pointer;
+        
+        &::before {
+            background: $primary-light;
+            color: $primary;
+        }
+    }
+}
+
+i.reverse {
+    color: $primary;
+    &::before {
+        background: $primary-light;
+    }
+    
+    &:hover::before {
+        background: $primary;
+        color: $primary-light;
+    }
+}
+
+#loader {
+    .loading__dot {
+        animation: dot ease-in-out 1s infinite;
+        background-color: grey;
+        display: inline-block;
+        border-radius:50%;
+        height: 5px;
+        margin: 0px 0px;
+        width: 5px;
+    }
+    
+    .loading__dot:nth-of-type(2) {
+        animation-delay: 0.2s;
+    }
+    
+    .loading__dot:nth-of-type(3) {
+        animation-delay: 0.3s;
+    }
+    
+    @keyframes dot {
+        0% { background-color: grey; transform: scale(.5); }
+        50% { background-color: red; transform: scale(1); }
+        100% { background-color: grey; transform: scale(.5); }
+    }
+    
+    img {
+        animation: spin 2s infinite;
+        filter: invert(30%) sepia(100%) hue-rotate(-40deg) saturate(6);
+    }
+}
+
+@keyframes spin {
+    from {
+        transform:rotate(0deg);
+    }
+    to {
+        transform:rotate(360deg);
+    }
+}
+
+.video-container {
+    width: 100%;
+    height: 100%;
+    max-width: 100%;
+    max-height: 65vh;
+    position: relative;
+    border-radius: $border-radius;
+    
+    video {
+        position: absolute;
+        top: 0;
+        left: 50%;
+        border-radius: $border-radius;
+        max-width: 100%;
+        max-height: 65vh;
+        transform: translateX(-50%);
+        
+        &.border {padding: 0px;}
+    }
+}
+
+.video-controls:nth-child(3) { margin-right: 4px; }
+
+.question-container {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+    width: 100%;
+    align-content: space-between;
+    align-items: center;
+    max-width: 750px;
+    
+    
+    @supports (-webkit-touch-callout: none) {
+        &>* {
+            margin-top: 16px;
+        }
+        &>*:nth-child(1) {
+            margin-top: 0px;
+        }    
+    }
+    
+    
+    .inline-flex {
+        flex-direction: column;
+        
+        @supports (-webkit-touch-callout: none) {
+            &>* {
+                margin-top: 16px;
+                margin-left: 0px;
+            }
+            &>*:nth-child(1) {
+                margin-top: 0px;
+                margin-left: 0px;
+            }    
+        }    
+    }
+    
+    img {
+        height: 50vh;
+        width: auto;
+    }
+}
+
+img {
+    width: auto;
+    max-width: 100%;
+    max-height: 25vh;
+    
+    &.border {padding: 0px;}
+}
+
+.border {
+    border: 1px solid $primary-light;
+    border-radius: $border-radius;
+    padding: 8px 24px;
+    
+    &.square { border-radius: 0px; }
+}
+
+.highlight {
+    background: $highlight;
+}
+
+.inline-flex {
+    display: flex;
+    gap: 16px;
+    align-items: flex-start;
+    
+    @supports (-webkit-touch-callout: none) {
+        &>* {
+            margin-left: 16px;
+        }
+        &>*:nth-child(1) {
+            margin-left: 0px;
+        }    
+    }
+    
+    
+    &.wrap {
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    
+}
+
+.vertical-align {
+    justify-content: center;
+}
+
+.hide { display: none;}
+.bold { font-weight: bold;}
+.small, p.small, a.small {
+    font-size: .75rem;
+    line-height: 1.2rem;
+}
+
+
+/* Modal -------------------------------------------*/
+
+.blocker {
+    background-color: rgba(250, 61, 61, 0.49);
+    padding: 0px;
+    
+    &::before { display: none !important;}
+    
+    .modal {
+        display: block;
+        max-width: none;
+        width: auto;
+        margin: 24px 32px;
+        border-radius: 2rem;
+        padding: 24px 32px;
+        box-shadow: 0 0 10px #fe5959;
+        background: rgba(255, 255, 255, 0.89);
+        
+        // avoid a.close-modal because that is the initial class of library
+        a.close-modal {
+            display: none;
+        }
+        
+        a[data-close] {
+            position:fixed;
+            top: 14.5px;
+            right: 30px;
+            width: 40px;
+            height: 40px;
+            background: none;
+        }
+    }
+}
+
+/* Video Override -------------------------------------------*/
+
+//force hide controls from html video
+
+*::-webkit-media-controls-panel {
+    display: none!important;
+    -webkit-appearance: none;
+}
+
+/* Old shadow dom for play button */
+*::-webkit-media-controls-play-button {
+    display: none!important;
+    -webkit-appearance: none;
+}
+
+/* New shadow dom for play button */
+*::-webkit-media-controls-start-playback-button {
+    display: none!important;
+    -webkit-appearance: none;
+}
+
+video::-webkit-media-controls { display:none !important; }
+
+
+@import "mobile.scss"

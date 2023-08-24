@@ -1,0 +1,272 @@
+{
+    "views": [
+      {
+        "index": 1,
+        "video": "view-1-start.mp4",
+        "auto": true,
+        "autoforward": 2,
+        "image": null,
+        "text": null,
+        "buttons": null
+      },
+      {
+        "index": 2,
+        "video": "view-2-problem-1-and-2.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Du findest das blöd?",
+        "buttons": [
+          {
+            "text": "Ja, schon",
+            "forward": "3"
+          },          
+          {
+            "text": "Nein",
+            "forward": "0"
+          }
+        ]
+      },
+      {
+        "index": 3,
+        "video": "view-3-problem-3.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "In dem Spiel, das aus den Zeichnungen und den Interviews entstanden ist, kannst du nun mitentscheiden, wie’s weitergeht.",
+        "buttons": [
+          {
+            "text": "Ok",
+            "forward": "4"
+          },          
+          {
+            "text": "Nein, danke",
+            "forward": "0"
+          }
+        ]
+      },
+      {
+        "index": 4,
+        "video": "view-4-decision.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Was würdest du am ehesten tun, um diese Probleme zu lösen?",
+        "buttons": [
+            {
+              "text": "Selbst aktiv werden",
+              "forward": "5"
+            },          
+            {
+              "text": "Nachhaltige Materialien verwenden",
+              "forward": "8"
+            },          
+            {
+              "text": "Gar nichts",
+              "forward": "19"
+            }
+        ]
+      },
+      {
+        "index": 5,
+        "video": "view-5-part-a.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": null,
+        "buttons": [
+            {
+              "text": "Möchtest du eine Person treffen, die selbst etwas ausprobiert, um die Situation zu verbessern?",
+              "forward": "6"
+            },          
+            {
+              "text": "Möchtest du selbst mit den Menschen sprechen, die von dem Problem betroffen sind, um ihre Sichtweise zu hören?",
+              "forward": "7"
+            },          
+            {
+              "text": "Möchtest du lieber aussteigen?",
+              "forward": "0"
+            }
+        ]
+      },
+      {
+        "index": 6,
+        "video": "view-6-part-c.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Wählen Sie",
+        "buttons": [
+            {
+              "text": "Gameli",
+              "forward": "11"
+            },          
+            {
+              "text": "Hannah",
+              "forward": "12"
+            }
+        ]
+      },
+      {
+        "index": 7,
+        "video": "view-7-part-d.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Wählen Sie",
+        "buttons": [
+            {
+              "text": "Saad",
+              "forward": "13"
+            },          
+            {
+              "text": "Rajina",
+              "forward": "14"
+            }
+        ]
+      },
+      {
+        "index": 8,
+        "video": "view-8-part-b.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Welche Materialien könnten das sein? Was würdest du vorschlagen?",
+        "buttons": [
+            {
+              "text": "Vielleicht Materialien aus Pflanzen oder Dingen, die es bei uns überall zu finden gibt?",
+              "forward": "9"
+            },          
+            {
+              "text": "Oder aus wiederverwerteten Dingen?",
+              "forward": "10"
+            }
+        ]
+      },
+      {
+        "index": 9,
+        "video": "view-9-part-e.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Wählen Sie",
+        "buttons": [
+            {
+              "text": "Maria Antonia",
+              "forward": "15"
+            },          
+            {
+              "text": "Irene",
+              "forward": "16"
+            }
+        ]
+      },
+      {
+        "index": 10,
+        "video": "view-10-part-f.mp4",
+        "auto": false,
+        "autoforward": null,
+        "image": null,
+        "text": "Wählen Sie",
+        "buttons": [
+            {
+              "text": "Milton",
+              "forward": "18"
+            },          
+            {
+              "text": "Seyram",
+              "forward": "17"
+            }
+        ]
+      },
+      {
+        "index": 11,
+        "character": "Gameli",
+        "video": "view-11-gameli.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 12,
+        "character": "Hannah",
+        "video": "view-12-hannah.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 13,
+        "character": "Saad",
+        "video": "view-13-saad.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 14,
+        "character": "Rajina",
+        "video": "view-14-rajina.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 15,
+        "character": "MariaAntonia",
+        "video": "view-15-maria-antonia.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 16,
+        "character": "Irene",
+        "video": "view-16-irene.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 17,
+        "character": "Seyram",
+        "video": "view-17-seyram.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 18,
+        "character": "Milton",
+        "video": "view-18-milton.mp4",
+        "auto": true,
+        "autoforward": -1,
+        "image": "",
+        "text": "",
+        "buttons": null
+      },
+      {
+        "index": 19,
+        "video": "view-19-exit.mp4",
+        "auto": true,
+        "autoforward": 0,
+        "image": "",
+        "text": "",
+        "buttons": null
+      }
+    ]
+}
